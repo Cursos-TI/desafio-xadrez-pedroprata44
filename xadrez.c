@@ -24,16 +24,28 @@ void movimentarPeca(int movimentoMax, char nomePeca [50]){
             movimentoMax--;
         }
     }
+    if(strcmp(nomePeca, "Cavalo") == 0){
+        while(movimentoMax > 1){
+            printf("%s andou 1 casa à baixo\n", nomePeca);
+            movimentoMax--;
+        }
+        for(movimentoMax; movimentoMax > 0; movimentoMax--){
+            printf("%s andou uma casa à esquerda\n", nomePeca);
+        }
+    }
 }
 
 int main() {
     const int movimentoMaxBispo = 5;
     const int movimentoMaxTorre = 5;
     const int movimentoMaxRainha = 8;
+    const int movimentoMaxCavalo = 3;
 
-    movimentarPeca(movimentoMaxBispo, "Bispo");
-    movimentarPeca(movimentoMaxTorre, "Torre");
-    movimentarPeca(movimentoMaxRainha, "Rainha");
+    movimentarPeca(movimentoMaxCavalo, "Cavalo");
+
+    // movimentarPeca(movimentoMaxBispo, "Bispo");
+    // movimentarPeca(movimentoMaxTorre, "Torre");
+    // movimentarPeca(movimentoMaxRainha, "Rainha");
 
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
