@@ -1,10 +1,40 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void movimentarPeca(int movimentoMax, char nomePeca [50]){
+    if(strcmp(nomePeca, "Bispo") == 0){
+        while(movimentoMax != 0){
+            printf("%s andou 1 casa na diagonal à direita\n", nomePeca);
+            movimentoMax--;
+        }
+    }
+    if(strcmp(nomePeca, "Torre") == 0){
+        while(movimentoMax != 0){
+            printf("%s andou 1 casa à direita\n", nomePeca);
+            movimentoMax--;
+        }
+    }
+    if(strcmp(nomePeca, "Rainha") == 0){
+        while(movimentoMax != 0){
+            printf("%s andou 1 casa à esquerda\n", nomePeca);
+            movimentoMax--;
+        }
+    }
+}
+
 int main() {
+    const int movimentoMaxBispo = 5;
+    const int movimentoMaxTorre = 5;
+    const int movimentoMaxRainha = 8;
+
+    movimentarPeca(movimentoMaxBispo, "Bispo");
+    movimentarPeca(movimentoMaxTorre, "Torre");
+    movimentarPeca(movimentoMaxRainha, "Rainha");
+
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
