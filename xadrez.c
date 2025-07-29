@@ -5,43 +5,46 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-void movimentarPeca(int movimentoMax, char nomePeca [50]){
-    if(strcmp(nomePeca, "Bispo") == 0){
-        while(movimentoMax != 0){
-            printf("%s andou 1 casa na diagonal à direita\n", nomePeca);
-            movimentoMax--;
+void movimentarCavalo(){
+    int quantidadeMovimentosCavalo = 3;
+    for(quantidadeMovimentosCavalo; quantidadeMovimentosCavalo > 0; quantidadeMovimentosCavalo--){
+        if(quantidadeMovimentosCavalo == 1){
+            printf("Cavalo andou 1 casa à direita\n");
+            break;
         }
-    }
-    if(strcmp(nomePeca, "Torre") == 0){
-        while(movimentoMax != 0){
-            printf("%s andou 1 casa à direita\n", nomePeca);
-            movimentoMax--;
-        }
-    }
-    if(strcmp(nomePeca, "Rainha") == 0){
-        while(movimentoMax != 0){
-            printf("%s andou 1 casa à esquerda\n", nomePeca);
-            movimentoMax--;
-        }
-    }
-    if(strcmp(nomePeca, "Cavalo") == 0){
-        while(movimentoMax > 1){
-            printf("%s andou 1 casa à baixo\n", nomePeca);
-            movimentoMax--;
-        }
-        for(movimentoMax; movimentoMax > 0; movimentoMax--){
-            printf("%s andou uma casa à esquerda\n", nomePeca);
-        }
+        printf("Cavalo andou 1 casa à cima\n");
     }
 }
 
-int main() {
-    const int movimentoMaxBispo = 5;
-    const int movimentoMaxTorre = 5;
-    const int movimentoMaxRainha = 8;
-    const int movimentoMaxCavalo = 3;
+void movimentarBispo(){
+    int quantidadeMovimentosBispo = 5;
+        while(quantidadeMovimentosBispo != 0){
+            printf("Bispo andou 1 casa na diagonal à direita\n");
+            quantidadeMovimentosBispo--;
+        }
+}
 
-    movimentarPeca(movimentoMaxCavalo, "Cavalo");
+void movimentarTorre(){
+    int quantidadeMovimentosTorre = 5;
+        while(quantidadeMovimentosTorre != 0){
+            printf("Torre andou 1 casa na diagonal à direita\n");
+            quantidadeMovimentosTorre--;
+        }
+}
+
+void movimentarRainha(){
+    int quantidadeMovimentosRainha = 8;
+        while(quantidadeMovimentosRainha != 0){
+            printf("Rainha andou 1 casa na diagonal à direita\n");
+            quantidadeMovimentosRainha--;
+        }
+}
+
+int main() {
+    movimentarCavalo();
+    movimentarBispo();
+    movimentarTorre();
+    movimentarRainha();
 
     // movimentarPeca(movimentoMaxBispo, "Bispo");
     // movimentarPeca(movimentoMaxTorre, "Torre");
